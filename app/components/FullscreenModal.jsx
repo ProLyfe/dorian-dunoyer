@@ -37,6 +37,7 @@ export default function FullscreenModal() {
             autoPlay
             muted
             onEnded={handleVideoEnd}
+            playsInline
           />
           <button
             className={styles.closeButton}

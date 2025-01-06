@@ -8,6 +8,7 @@ export default function Video({ videoCarousel }) {
         autoPlay 
         muted 
         loop
+        playsInline
     >
         <source src={videoCarousel} type="video/mp4" />
     </video>
