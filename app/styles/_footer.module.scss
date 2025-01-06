@@ -3,6 +3,9 @@
     color: white;
     font-family: $heading-font;
     line-height: 1.25rem;
+    .footerLink {
+        text-decoration: underline;
+    }
     .footerCopyright {
         margin-top: 3rem;
     }

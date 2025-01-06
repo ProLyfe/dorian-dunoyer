@@ -6,10 +6,12 @@ import SVGIMG from '../images/logo-dorian.svg';
 import UIWidth from './UIWidth';
 import Link from 'next/link';
 import Video from './Video';
+import { usePathname } from 'next/navigation'
 
 const Header = () => {
 
     const [isOpen, setIsOpen] = useState(false);
+    const pathname = usePathname()
 
     const toggleMenu = () => {
         setIsOpen(!isOpen);
@@ -36,10 +38,10 @@ const Header = () => {
                     <Image src={SVGIMG} alt={"Logo Dorian"} height={85}/>
                 </Link>
                     <ul className={styles.navbarDesktopMenu}>
-                        <li><Link href="#home" onClick={handleScroll}>Home</Link></li>
-                        <li><Link href="#about-me" onClick={handleScroll}>About me</Link></li>
-                        <li><Link href="#portfolio" onClick={handleScroll}>Portfolio</Link></li>
-                        <li><Link href="#contact" onClick={handleScroll}>Contact</Link></li>
+                        <li><Link href="/" onClick={pathname === '/' && handleScroll}>Home</Link></li>
+                        <li><Link href="/#about-me" onClick={pathname === '/' && handleScroll}>About me</Link></li>
+                        <li><Link href="/#portfolio" onClick={pathname === '/' && handleScroll}>Portfolio</Link></li>
+                        <li><Link href="/#about" onClick={pathname === '/' && handleScroll}>Contact</Link></li>
                     </ul>
                 </div>
                 {/* Burger Menu */}

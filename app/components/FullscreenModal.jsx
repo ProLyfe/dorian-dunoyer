@@ -27,6 +27,10 @@ export default function FullscreenModal() {
     setIsModalOpen(false);
   };
 
+  const handleContextMenu = (e) => {
+    e.preventDefault(); // Bloque le clic droit
+  };
+
   return (
     <div>
       {isModalOpen && (
@@ -38,6 +42,7 @@ export default function FullscreenModal() {
             muted
             onEnded={handleVideoEnd}
             playsInline
+            onContextMenu={handleContextMenu}
           />
           <button
             className={styles.closeButton}
