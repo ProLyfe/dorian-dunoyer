@@ -1,0 +1,46 @@
+.koreanTextSection {
+    background-color: white;
+    display: flex;
+    height: 6.25rem;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+    position: relative;
+  
+    .welcome {
+      color: $dark;
+    }
+  
+    @include lg {
+      height: 5rem;
+      display: none;
+    }
+  
+    .text {
+      position: absolute; // Superpose les textes
+      color: $dark;
+      font-weight: bold;
+      font-size: 1.75rem;
+      white-space: nowrap;
+      transition: opacity 3s ease; // Transition douce entre les deux états
+      opacity: 0; // Par défaut, caché
+      top: 50%; // Positionne verticalement au centre
+      left: 50%; // Positionne horizontalement au centre
+      transform: translate(-50%, -50%); // Centre précisément l'élément
+  
+      &.fadeIn {
+        opacity: 1; // Rend visible
+      }
+  
+      &.fadeOut {
+        opacity: 0; // Cache progressivement
+      }
+  
+      &.hidden {
+        opacity: 0; // Moment de blanc
+        transition: none; // Pas d'animation pendant le moment de blanc
+      }
+    }
+  }
+  

@@ -1,0 +1,42 @@
+.firstSection {
+    width: 100%; 
+    height: 70vh; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    
+    @include lg {
+        height: 100vh;
+      }
+    .firstSectionImage {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        position: absolute;
+        object-position: top;
+        filter: brightness(0.9);
+    }
+    .firstSectionKoreanText {
+        color: white;
+        display: none;
+        position: absolute;
+        top: 20%;
+        left: 15%;
+        font-size: 4rem;
+        @include lg {
+            display: block;
+        }
+    }
+    .fadeIn {
+        animation: fadeIn 2s ease-in-out;
+      }
+      @keyframes fadeIn {
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+}

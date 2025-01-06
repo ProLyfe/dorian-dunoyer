@@ -1,0 +1,55 @@
+$md: 768px;
+$lg: 1024px;
+$xl: 1440px;
+$xxl: 1600px;
+
+@mixin md {
+  @media screen and (min-width: #{$md}) {
+    @content
+  }
+}
+@mixin lg {
+  @media screen and (min-width: #{$lg}) {
+    @content
+  }
+}
+@mixin xl {
+  @media screen and (min-width: #{$xl}) {
+    @content
+  }
+}
+@mixin xxl {
+  @media screen and (min-width: #{$xxl}) {
+    @content
+  }
+}
+
+.clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 90%;
+  @include lg {
+    max-width: 80%;
+  }
+  @include xl {
+    max-width: 75%;
+  }
+  @include xxl {
+    max-width: 66%;
+  }
+  @extend .clearfix;
+}
+
+// For retina screens
+@mixin retina {
+  @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { 
+      @content
+  }
+}

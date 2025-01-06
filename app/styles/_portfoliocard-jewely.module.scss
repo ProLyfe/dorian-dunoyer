@@ -1,0 +1,16 @@
+.portfolioSectionPhotos {
+    height: 6rem;
+    width: 100%;
+    margin-bottom: 1rem;
+    position: relative;
+    cursor: pointer;
+    .firstSectionImage {
+        position: absolute;
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+    }
+    @include lg {
+        height: 16rem;
+    }
+}

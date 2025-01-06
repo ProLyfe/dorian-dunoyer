@@ -1,0 +1,14 @@
+@font-face {
+    font-family: 'Cormorant';
+    src: url('../fonts/Cormorant-Bold.woff') format('opentype');
+}
+
+@font-face {
+    font-family: 'Balsamiq';
+    src: url('../fonts/BalsamiqSans-Regular.ttf') format('opentype');
+}
+
+$heading-font: 'Cormorant';
+$body-font: 'Balsamiq';
+
+

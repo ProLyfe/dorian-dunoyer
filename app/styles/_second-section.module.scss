@@ -1,0 +1,60 @@
+.secondSection {
+    background-image: url("../images/rectanglebg.png");
+    background-size: cover;
+    background-position: center;
+    padding-top: 2.75rem;
+    padding-bottom: 2.75rem;
+    .secondSectionContainer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        h2 {
+            font-family: $heading-font;
+            font-size: 2.25rem;
+            display: block;
+            width: 100%;
+            color: white;
+            @include lg {
+                font-size: 4.75rem;
+            }
+        }
+        p {
+            font-family: $body-font;
+            color: white;
+        }
+        
+        .secondSectionDiplome {
+            margin-top: 2.75rem;
+            position: relative; /* Nécessaire pour que le texte soit bien positionné */
+            display: inline-block; /* Pour envelopper l'image et le texte */
+        }
+        
+        .secondSectionDiplome img {
+            transition: transform 0.6s, filter 0.6s; /* Applique la transformation uniquement sur l'image */
+        }
+        
+        .secondSectionDiplome:hover img {
+            transform: scale(1.4);
+            filter: brightness(0.6);
+            cursor: pointer;
+        }
+        .hoverText {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            font-family: $heading-font;
+            text-decoration: underline;
+            transform: translate(-50%, -50%);
+            color: white; /* Choisis une couleur qui contraste bien avec l'image */
+            font-size: 1.5rem;
+            text-align: center;
+            opacity: 0; /* Caché par défaut */
+            transition: opacity 0.3s ease; /* Transition d'apparition */
+            z-index: 10; /* Assure que le texte est au-dessus de l'image */
+            pointer-events: none; /* Empêche l'interaction avec le texte */
+        }
+        .secondSectionDiplome:hover .hoverText {
+            opacity: 1;
+        }
+    }
+}
