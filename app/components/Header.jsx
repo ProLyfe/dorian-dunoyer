@@ -54,7 +54,9 @@ const Header = () => {
                 {/* Logo centré */}
                 <div className={styles.logo}>
                     {/* <Image src={logo} alt="Logo" /> */}
-                    <Image src={SVGIMG} alt={"Logo Dorian"}/>
+                    <Link href="/">
+                        <Image src={SVGIMG} alt={"Logo Dorian"}/>
+                    </Link>
                 </div>
 
                 {/* Menu */}
