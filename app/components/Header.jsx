@@ -7,8 +7,11 @@ import UIWidth from './UIWidth';
 import Link from 'next/link';
 import Video from './Video';
 import { usePathname } from 'next/navigation'
+import { useRouter } from 'next/navigation'
 
 const Header = () => {
+
+    const router = useRouter();
 
     const [isOpen, setIsOpen] = useState(false);
     const pathname = usePathname()
@@ -28,6 +31,12 @@ const Header = () => {
           behavior: "smooth",
         });
     };
+
+    const handleClick = (e) => {
+        // e.preventDefault()
+        console.log('ccccccc')
+        router.push("/")
+      }
 
     return (
     <div className={styles.uiMaxWidth}>
@@ -52,11 +61,9 @@ const Header = () => {
                 </div>
 
                 {/* Logo centré */}
-                <div className={styles.logo}>
+                <div className={styles.logo} onClick={handleClick}>
                     {/* <Image src={logo} alt="Logo" /> */}
-                    <Link href="/">
-                        <Image src={SVGIMG} alt={"Logo Dorian"}/>
-                    </Link>
+                    <Image src={SVGIMG} alt={"Logo Dorian"} />
                 </div>
 
                 {/* Menu */}

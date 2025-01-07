@@ -77,7 +77,9 @@
   }
 
   .logo {
+    // background-color: red;
     position: absolute;
+    cursor: pointer;
     left: 50%;
     transform: translateX(-50%);
     z-index: 500; /* Ensures logo is on top of other elements */
