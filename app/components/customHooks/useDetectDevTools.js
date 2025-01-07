@@ -4,7 +4,16 @@ const useDetectDevTools = () => {
   const [isDevToolsOpen, setIsDevToolsOpen] = useState(false);
 
   useEffect(() => {
+    const isMobileDevice = () => {
+      return /Mobi|Android|iPhone|iPad|iPod|Windows Phone/i.test(navigator.userAgent);
+    };
+
     const detectDevTools = () => {
+      if (isMobileDevice()) {
+        setIsDevToolsOpen(false); // Ne fait rien si c'est un mobile
+        return;
+      }
+
       const threshold = 160; // Largeur minimale pour détecter la console devtools
       const widthThreshold = window.outerWidth - window.innerWidth > threshold;
       const heightThreshold = window.outerHeight - window.innerHeight > threshold;
