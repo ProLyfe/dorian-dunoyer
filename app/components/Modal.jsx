@@ -35,7 +35,7 @@ const Modal = ({ handleClose, imgCarousel, videoCarousel, type }) => (
         exit="exit"
       >
         <div className={styles.modalContainer}>
-            <SimpleSlider imgCarousel={imgCarousel} videoCarousel={videoCarousel} type={type}/>
+            <SimpleSlider imgCarousel={imgCarousel} videoCarousel={videoCarousel} type={type} handleClose={handleClose}/>
         </div>
       </motion.div>
   </Backdrop>

@@ -5,8 +5,9 @@ import "slick-carousel/slick/slick-theme.css";
 import styles from '../styles/_simple-slider.module.scss';
 import Image from 'next/image';
 import Video from "./Video";
+import useDetectDevTools from "./customHooks/useDetectDevTools";
 
-const SimpleSlider = ({ imgCarousel, videoCarousel, type }) => {
+const SimpleSlider = ({ imgCarousel, videoCarousel, type, handleClose }) => {
   var settings = {
     dots: true,
     infinite: true,
@@ -17,24 +18,30 @@ const SimpleSlider = ({ imgCarousel, videoCarousel, type }) => {
     swipe: type === "jewelry" ? true : false,
     adaptiveHeight: true
   };
-  
+
+  const isDevToolsOpen = useDetectDevTools();
+
   return (
     <Slider {...settings}>
       {imgCarousel.map((img) => (
          <div className={styles.carouselImageContainer} key={Math.random()}>
-          <Image 
-            src={img} 
-            alt="Dorian walking in front of the sea"
-            className={styles.carouselImage}
-            fill
-          />
+           {
+             isDevToolsOpen ? null : (
+               <Image 
+                 src={img} 
+                 alt="Dorian walking in front of the sea"
+                 className={styles.carouselImage}
+                 fill
+               />
+             )
+           }
 
        </div>
       ))}
       {
         type === 'jewelry' && (
           <div className={styles.carouselVideoContainer}>
-            <Video videoCarousel={videoCarousel}/>
+            <Video videoCarousel={videoCarousel} handleClose={handleClose}/>
           </div>
         )
       }

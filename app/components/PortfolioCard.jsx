@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Modal from './Modal';
+import useDetectDevTools from './customHooks/useDetectDevTools';
 
 const PortfolioCard = ({ image, imgCarousel, videoCarousel, alt, key, type, isArchi }) => {
 
@@ -19,7 +20,7 @@ const PortfolioCard = ({ image, imgCarousel, videoCarousel, alt, key, type, isAr
           behavior: 'smooth', // Ajoute un défilement fluide
         });
     };
-    
+    const isDevToolsOpen = useDetectDevTools();
     return (
         <>
             <motion.div 
@@ -33,12 +34,15 @@ const PortfolioCard = ({ image, imgCarousel, videoCarousel, alt, key, type, isAr
                     scrollToTop();
                 }}
                 >
-                <Image 
-                    fill
-                    src={image} 
-                    alt={alt}
-                    className={type === 'interior' ? styles.firstSectionImage : styles2.firstSectionImage}
-                />
+                {
+                    isDevToolsOpen ? null : 
+                    <Image 
+                        fill
+                        src={image} 
+                        alt={alt}
+                        className={type === 'interior' ? styles.firstSectionImage : styles2.firstSectionImage}
+                    />
+                }
             </motion.div>
             
             <AnimatePresence

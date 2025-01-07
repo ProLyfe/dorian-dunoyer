@@ -2,6 +2,7 @@
 "use client";
 import { useState, useEffect } from 'react';
 import styles from '../styles/_fullscreenmodal.module.scss';
+import useDetectDevTools from './customHooks/useDetectDevTools';
 
 export default function FullscreenModal() {
   const [isModalOpen, setIsModalOpen] = useState(true);
@@ -31,10 +32,13 @@ export default function FullscreenModal() {
     e.preventDefault(); // Bloque le clic droit
   };
 
+  const isDevToolsOpen = useDetectDevTools();
+  // console.log('test :', isDevToolsOpen)
   return (
     <div>
       {isModalOpen && (
         <div className={styles.modal}>
+          {isDevToolsOpen ? setIsModalOpen(false) : 
           <video
             className={styles.video}
             src={isMobile ? "Tracking_vers_mobile.mp4" : "Tracking_vers_pc.mp4"} // Vidéo différente selon l'écran
@@ -44,6 +48,7 @@ export default function FullscreenModal() {
             playsInline
             onContextMenu={handleContextMenu}
           />
+          }
           <button
             className={styles.closeButton}
             onClick={() => setIsModalOpen(false)}
