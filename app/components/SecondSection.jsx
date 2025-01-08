@@ -12,7 +12,7 @@ const SecondSection = () => (
                 <h2>About me</h2>
                 <Hr color="white"/>
                 <p>
-                    My passion for 3D, which began at a very young age, has continually grown, allowing me to discover an infinite world of creative possibilities that I still explore with enthusiasm. To me, it represents the future of visual creation, and this is what fuels my passion every day. My goal is to take part in projects that merge art and technology. I aim not only to refine my technical skills but also to develop a unique visual style that could leave a impact on the industry. This passion recently led me to earn a master’s degree in Game Art.
+                    My passion for 3D, which began at a very young age, has continually grown, allowing me to discover an infinite world of creative possibilities that I still explore with enthusiasm. To me, it represents the future of visual creation, and this is what fuels my passion every day. My goal is to take part in projects that merge art and technology. I aim not only to refine my technical skills but also to develop a unique visual style that could leave an impact on the industry. This passion recently led me to earn a master’s degree in Game Art.
                 </p>
                 <a 
                     className={styles.secondSectionDiplome}
